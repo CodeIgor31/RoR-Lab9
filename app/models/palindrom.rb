@@ -1,0 +1,2 @@
+class Palindrom < ApplicationRecord
+end

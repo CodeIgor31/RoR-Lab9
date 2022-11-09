@@ -1,0 +1,8 @@
+<h3>Задание:</h3> Найти все числа, которые сами являсь палиндромами, при возведении в квадрат, образуют палиндромы.
+<h4>Форма</h4>
+<%= form_with(id: 'pal_form', url: "/result.json", method: :get, remote: true) do |form| %>
+  <p><%= form.label :query, "Введите верхнюю границу диапазона [0,n]" %></p>
+  <p><%= form.number_field(:num, {:class => 'form-control'}) %></p>
+  <p><%= form.submit "Найти" %></p>
+  <p><div id="res"></div></p>
+<% end %>
