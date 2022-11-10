@@ -1,8 +1,30 @@
+<head>
+  <style>
+    .bord{
+        border: 1px solid black;
+        }
+    .tab{
+        height:40%;
+        width:100%;
+        border: 1px solid black;
+        }
+</style>
+</head>
 <h3>Задание:</h3> Найти все числа, которые сами являсь палиндромами, при возведении в квадрат, образуют палиндромы.
 <h4>Форма</h4>
-<%= form_with(id: 'pal_form', url: "/result.json", method: :get, remote: true) do |form| %>
-  <p><%= form.label :query, "Введите верхнюю границу диапазона [0,n]" %></p>
-  <p><%= form.number_field(:num, {:class => 'form-control'}) %></p>
-  <p><%= form.submit "Найти" %></p>
-  <p><div id="res"></div></p>
+<%= form_tag("/palindroms/result.json", :method => "get", remote:true, id:'pal_form', class: 'form-control') do %>
+  <%= label_tag("Введите верхнюю границу диапазона [0,n]") %>
+  <%= number_field_tag :num, "100" , class: 'form-control' %> <br/>
+  <%= submit_tag("Найти") %>
 <% end %>
+<br>
+<table class = "tab">
+  <tr class = 'bord'>
+    <th class = 'bord'>Число</th>
+    <th class = 'bord'>Квадрат числа</th>
+  </tr>
+    <tbody id="result">
+    </tbody>
+</table>
+<p><div id="counter"></div></p>
+<p><div id="data"></div></p>

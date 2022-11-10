@@ -7,14 +7,11 @@ class PalindromsController < ApplicationController
   def result
     @number = params[:num].to_i
     @res_arr = PalindromsController.result_array(@number)
-    redirect_to home_path, remote: true, notice: 'Вводите числа >= 0' if @res_arr.size.zero?
     respond_to do |format|
       format.html
       format.json do
-        unless @res_arr.size.zero?
-          render json:
-          {type: @res_arr.class.to_s, value: @res_arr}
-        end
+        render json:
+        { type: @res_arr.class.to_s, value: [@number, @res_arr] }
       end
     end
   end
