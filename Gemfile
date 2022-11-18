@@ -66,10 +66,15 @@ group :development do
   # gem "spring"
 end
 
+gem 'rails-controller-testing'
+group :development, :test do
+  gem 'rspec-rails', '>= 3.9.0'
+end
+
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
-  gem 'selenium-webdriver'
+  gem 'selenium-webdriver', '= 4.6.1'
   gem 'webdrivers'
 end
 

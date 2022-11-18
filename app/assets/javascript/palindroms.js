@@ -8,7 +8,7 @@ function show_result(data){
         count.innerHTML = ""
         data_id.innerHTML = ""
         result.innerHTML = ""
-        alert("Вводите числа >= 0 ")
+        alert("Numbers >= 0")
         return false
     }
         result.innerHTML = ""

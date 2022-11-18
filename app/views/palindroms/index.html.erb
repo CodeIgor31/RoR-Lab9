@@ -14,8 +14,8 @@
 <h4>Форма</h4>
 <%= form_tag("/palindroms/result.json", :method => "get", remote:true, id:'pal_form', class: 'form-control') do %>
   <%= label_tag("Введите верхнюю границу диапазона [0,n]") %>
-  <%= number_field_tag :num, "100" , class: 'form-control' %> <br/>
-  <%= submit_tag("Найти") %>
+  <%= number_field_tag :num, class: 'form-control', id: 'num' %> <br/>
+  <%= submit_tag("Найти", id: 'btn') %>
 <% end %>
 <br>
 <table class = "tab">
